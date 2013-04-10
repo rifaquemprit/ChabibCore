@@ -13,7 +13,7 @@ $submenu3 = array(
 );
 #Menu::sub($submenu3,3);
 #Menu::create('Text','link','Attribute','posisi')
-Menu::create('<img src="images/icons/mainnav/dashboard.png" alt="" /><span>Cart</span>','?m=carts','attribute',1);
+Menu::create('Cart','?m=carts','attribute',1);
 Menu::create('Create','?m=post','attribute',10);
 Menu::create('Plugins','?m=plugins','attribute',20);
 Menu::create('Menu 4','link','attribute',30);
