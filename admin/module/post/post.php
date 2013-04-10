@@ -1,4 +1,4 @@
 <?php
-Menu::create("Data User");
+Menu::newsub('aaaaa', 'aaa','',1);
 ?>
 dfsdfd

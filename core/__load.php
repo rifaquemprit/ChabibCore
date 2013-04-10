@@ -17,6 +17,8 @@ if(!function_exists('__load'))
 
 /**************** // Core Load // **********************/
 $is_load = array(
+    'Connector',
+    'Login',
     'a_Template',
     'a_Plugin',
     'Anchor',
