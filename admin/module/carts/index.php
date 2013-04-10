@@ -1,9 +1,3 @@
-<?php
-Template::addCss('style---.css');
-Template::addjs('style---.js');
-
-?>
-
 <div class="widget">
     <div id="dyn2" class="shownpars">
         <table  cellpadding="0" cellspacing="0" border="0" class="dTable tablesorter">
@@ -20,7 +14,7 @@ Template::addjs('style---.js');
             <tbody>
                 <?php
                 $no = 0;
-                $Cart_query = mysql_query('select * from data_barang');
+                $Cart_query = mysql_query('select * from '. PREFIX_TABLE .'cart_product');
                 while($result = mysql_fetch_object($Cart_query)):
                 ?>
                 <tr>

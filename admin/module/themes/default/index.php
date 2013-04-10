@@ -16,6 +16,8 @@
         <div class="ch-top-menus">
             <?php echo Menu::generate();?>
         </div>
-        <?php echo Template::showContent();?>
+        <div class="content">
+            <?php echo Template::showContent();?>
+        </div>
     </body>
 </html>
