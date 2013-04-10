@@ -46,7 +46,8 @@ Class Template
             
             else
             {
-                $file_content = "<h3>TIDAK DITEMUKAN</h3>".$getFile ;
+                $file_content = "<h1 style='margin-top: 120px; text-align: center'>TIDAK DITEMUKAN</h1>" ;
+                $file_content .= "<h2 style='text-align: center'>Maaf halaman yang anda minta belum tersedia</h2>" ;
             }
         }
         else 
@@ -63,6 +64,21 @@ Class Template
 
     public static function render()
     {
+        $dir = APPPATH."admin/module/";
+        $handle = opendir($dir);
+        $module = array();
+        while($directory_module = readdir($handle))
+        {
+            if(is_dir($dir . $directory_module))
+            {
+                $config_load = $dir . $directory_module . '/config.php';
+                if(file_exists($config_load))
+                {
+                    include $config_load;
+                }
+            }
+        }
+        
         include APPPATH.'admin/module/themes/'. THEME_USE .'/index'.EXT;
     }
     public static function addCss($css)
