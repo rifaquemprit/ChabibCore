@@ -17,7 +17,6 @@ if(!function_exists('__load'))
 
 /**************** // Core Load // **********************/
 $is_load = array(
-    'Connector',
     'a_Template',
     'a_Plugin',
     'Anchor',
@@ -25,12 +24,4 @@ $is_load = array(
     'a_Default_menus',
 );
 
-/* * * * * * -- LOAD ARRAY -- * * * * *
-foreach($is_load as $Load_now)
-{
-    include COREADMINPATH . $Load_now . EXT;
-}
-Template::viewContent();
- * 
- */
 __load($is_load);
