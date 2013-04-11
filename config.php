@@ -10,3 +10,6 @@ define('DB_PASSWORD','');
 define('DB_USER','root');
 define('DB_DATABASE','chabibcms');
 define('PREFIX_TABLE','ch_');
+
+/* ----- user type ------ */
+define('USER_TYPE','admin|user');
