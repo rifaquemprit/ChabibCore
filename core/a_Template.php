@@ -4,7 +4,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-Class Template
+Class Template extends Access
 {
     protected static $getContent;
     protected static $js;
@@ -53,6 +53,14 @@ Class Template
         else 
         {
             $file_content = false;
+        }
+        if(self::$lihatcontent == 'allow')
+        {
+            $file_content = $file_content;
+        }
+        else
+        {
+            $file_content = "Access Denied";
         }
         self::$getContent = $file_content;
     }

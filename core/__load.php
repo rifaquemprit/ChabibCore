@@ -19,6 +19,7 @@ if(!function_exists('__load'))
 $is_load = array(
     'Connector',
     'Login',
+    'Access',
     'a_Template',
     'a_Plugin',
     'Anchor',
