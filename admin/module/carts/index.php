@@ -1,3 +1,6 @@
+<?php
+Access::set('user|admin');
+?>
 <div class="widget">
     <div id="dyn2" class="shownpars">
         <table  cellpadding="0" cellspacing="0" border="0" class="dTable tablesorter">
