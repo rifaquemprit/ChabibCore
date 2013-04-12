@@ -9,10 +9,16 @@ Class Template extends Access
     protected static $getContent;
     protected static $js;
     protected static $css;
+    protected static $usethemes;
 
     public static function title($title='')
     {
         return $title;
+    }
+    
+    public static function useThemes($use)
+    {
+        self::$usethemes = ($use == false) ?  false : true;
     }
     
     public static function viewContent()
@@ -86,8 +92,21 @@ Class Template extends Access
                 }
             }
         }
-        
-        include APPPATH.'admin/module/themes/'. THEME_USE .'/index'.EXT;
+        if(isset(self::$usethemes))
+        {
+            if(self::$usethemes == false)
+            {
+                echo self::showContent();
+            }
+            else
+            {
+                include APPPATH.'admin/module/themes/'. THEME_USE .'/index'.EXT;
+            }
+        }
+        else 
+        {
+            include APPPATH.'admin/module/themes/'. THEME_USE .'/index'.EXT;
+        }
     }
     public static function addCss($css)
     {
