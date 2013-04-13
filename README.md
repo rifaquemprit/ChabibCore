@@ -1,4 +1,4 @@
-chabibcms
+Chabib Core
 =========
 
 DIbuat 
