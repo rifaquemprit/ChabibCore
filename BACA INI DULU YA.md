@@ -1,3 +1,1 @@
-Mohon maaf untuk sementara chabibcms tidak di update, karena ada suatu kesibukan
-
-terima kasih
+Chabib CMS sekarang telah diubah menjadi Chabib Core
