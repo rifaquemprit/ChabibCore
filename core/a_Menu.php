@@ -27,7 +27,7 @@ class Menu{
             $link = isset($subdata['link'])? $subdata['link'] : '';
             $text = isset($subdata['text']) ? $subdata['text'] : '';
             $attr = isset($subdata['attr']) ? $subdata['attr'] : '';
-            $sub .= "<li><a href='". $link ."' ". $attr .">". $text ."</a></li>";
+            $sub .= "<li><a href='".SITEURL."admin/". $link ."' ". $attr .">". $text ."</a></li>";
         }
         
         self::$submenu['text'][$posisi] = $sub;
