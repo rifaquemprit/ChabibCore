@@ -1,6 +1,6 @@
 <?php
 
-class Login {
+class Login extends Load{
     protected static function explodeuser($id)
     {
         $user = str_replace(' ','',USER_TYPE);

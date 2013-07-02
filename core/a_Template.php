@@ -7,8 +7,8 @@
 Class Template extends Access
 {
     protected static $getContent;
-    protected static $js;
-    protected static $css;
+    #protected static $js;
+    #protected static $css;
     protected static $usethemes;
 
     public static function title($title='')
@@ -16,7 +16,7 @@ Class Template extends Access
         return $title;
     }
     
-    public static function useThemes($use)
+    public static function useTemplate($use)
     {
         self::$usethemes = ($use == false) ?  false : true;
     }
@@ -115,11 +115,6 @@ Class Template extends Access
             $files_path = explode('/',$_GET['m']);
             $path_css = 'admin/module/'.$files_path[0].'/'.$css; 
         }
-        if(isset($_GET['p']))
-        {
-            $files_path = explode('/',$_GET['p']);
-            $path_css = 'admin/plugins/'.$files_path[0].'/'.$css; 
-        }
         self::$css[] = SITEURL . $path_css;
     }
 
@@ -149,11 +144,6 @@ Class Template extends Access
         {
             $files_path = explode('/',$_GET['m']);
             $path_js = 'admin/module/'.$files_path[0].'/'.$js; 
-        }
-        if(isset($_GET['p']))
-        {
-            $files_path = explode('/',$_GET['p']);
-            $path_js = 'admin/plugins/'.$files_path[0].'/'.$js; 
         }
         self::$js[] = SITEURL . $path_js;
     }

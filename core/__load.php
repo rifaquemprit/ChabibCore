@@ -18,13 +18,18 @@ if(!function_exists('__load'))
 /**************** // Core Load // **********************/
 $is_load = array(
     'Connector',
+    'Db',
+    'Configurations',
+    'load',
     'Login',
+    'Validation',
     'Access',
     'a_Template',
     'a_Plugin',
     'Anchor',
     'a_Menu',
     'a_Default_menus',
+    'setting'
 );
 
 __load($is_load);

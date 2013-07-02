@@ -7,6 +7,7 @@
  * project url  : http://github.com/chabibnr/chabibcore
  * Desc         : sub project ini terinspirasi dari Form_validation Codeigniter
  * Date         : 14 April 2012
+ * Versi        : 1.1
  * Contoh penggunaan
  * $rules = array(
  *      'input_name'  => (
@@ -24,7 +25,7 @@
  * 
  * validation::rules($rules);
  * if(validation::run() == false)
- * validation::show_error_message();
+ * validation::show_error_messages();
  * 
  * else:
  * echo "Eksekusi form";
@@ -39,20 +40,23 @@ Class Validation{
     public static function rules($rule=array(),$method='post')
     {
         $msg = '<ul>';
-        $method = ($method == 'post') ? '_POST' : '_GET';
+        $method = ($method == 'post') ? $_POST : $_GET;
         foreach ($rule as $name => $value)
         {
+            $create_name_rule = isset($method[$name]) ? $method[$name] : '';
             foreach($value as $valid_select => $message)
             {
                 $valid_select = explode('|',$valid_select);
                 $value = isset($valid_select[1]) ? $valid_select[1] : '';
                 $call_function = 'valid_'.$valid_select[0];
-                if(self::$call_function($_POST[$name],$value) == FALSE)
+                
+                if(self::$call_function($create_name_rule,$value) == FALSE)
                 {
                     $msg .=  '<li>'.$message.'</li>';
                     self::$tidak_valid[] = 1;
                 }
             }
+            
         }
         $msg .= '</ul>';
         self::$messages = $msg;

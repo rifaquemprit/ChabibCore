@@ -17,7 +17,7 @@ class Menu{
     
     public static function newsub($text='',$link='',$attribute='',$posisi='')
     {
-        self::$newsubmenu['text'][$posisi] = array("<a href='". SITEURL ."admin/". $link ."' $attribute >". $text ."</a>");
+        self::$newsubmenu['text'][$posisi][] = array("<a href='". SITEURL ."admin/". $link ."' $attribute >". $text ."</a>");
     }
     public static function sub($data,$posisi=0)
     {
@@ -53,11 +53,15 @@ class Menu{
             {
                $menu .= "<ul class='ch-ul-submenu'>";
                $menu .= self::$submenu['text'][$menus['posisi']];
-               foreach(self::$newsubmenu['text'][$menus['posisi']] as $mainnewsub )
-               {
-                   $menu .= "<li>". $mainnewsub ."</li>";
+               if(isset(self::$newsubmenu['text'][$menus['posisi']])){
+                    foreach(self::$newsubmenu['text'][$menus['posisi']] as $mainnewsub )
+                    {
+                        foreach ($mainnewsub as $subcreate):
+                        $menu .= "<li>". $subcreate ."</li>";
+                        endforeach;
+                    }
+                    $menu .= "</ul>";
                }
-               $menu .= "</ul>";
             }
             $menu .= '</li>';
         endforeach;
